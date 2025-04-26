@@ -8,14 +8,10 @@ import {
 } from "@mui/material";
 import { Formik } from "formik";
 import style from "../../src/styles/style.module.scss";
+import { UserFormValues } from "@/utils/type";
 
-interface FormValues {
-  userName: string;
-  userEmail: string;
-  userPassword: string;
-}
 
-const initialValues: FormValues = {
+const initialValues: UserFormValues = {
   userName: "",
   userEmail: "",
   userPassword: "",

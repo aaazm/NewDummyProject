@@ -7,6 +7,7 @@ import {
   FormLabel,
   Grid,
   TextField,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { Formik } from "formik";
@@ -14,20 +15,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { postApi } from "@/utils/api";
 import { useRouter } from "next/navigation";
+import { LoginValues } from "@/utils/type";
 
-interface FormValues {
-  email: string;
-  password: string;
-}
 
-const initialValues: FormValues = {
+const initialValues: LoginValues = {
   email: "mor_2314",
   password: "83r5^_",
 };
 export default function Login() {
   const [isPending, IsPending] = useState(false);
   const router = useRouter();
-  const onFormSubmit = async (values: FormValues) => {
+  
+  const onFormSubmit = async () => {
     const payload = {
       username: "mor_2314",
       password: "83r5^_",
@@ -42,7 +41,7 @@ export default function Login() {
 
       if (data.token) {
         localStorage.setItem("login-user", data.token);
-        router.push('/dashboard')
+        router.push("/dashboard");
         // window.location.href = "/dashboard"; // Redirect
         IsPending(false);
       } else {
@@ -160,13 +159,18 @@ export default function Login() {
                         )}
                       </Button>
                     ) : (
-                      <Button
-                        variant="contained"
-                        type="submit"
-                        className={style.bt}
+                      <Tooltip
+                        title={"Its pre-fill  credentials"}
+                        placement="top"
                       >
-                        Sign In
-                      </Button>
+                        <Button
+                          variant="contained"
+                          type="submit"
+                          className={style.bt}
+                        >
+                          Sign In
+                        </Button>
+                      </Tooltip>
                     )}
 
                     <Typography variant="body1" mt={2} color="text.tabColor">

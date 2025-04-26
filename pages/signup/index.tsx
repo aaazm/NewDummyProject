@@ -13,18 +13,8 @@ import {
 import { Formik } from "formik";
 import Link from "next/link";
 import Image from "next/image";
+import { FormValues } from "@/utils/type";
 
-interface FormValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: number;
-  password: string;
-  country: string;
-  state: string;
-  city: string;
-  zipCode: string;
-}
 
 const initialValues: FormValues = {
   firstName: "",
@@ -45,14 +35,14 @@ export default function Login() {
     <>
       <Box className={style.p_signup}>
         <Box className={style.signup_l}>
-        <Box className={style.logo}>
-              <Image
-                src={"./JK_Tech_Logo.svg"}
-                alt="Logo"
-                width={400}
-                height={80}
-              />
-            </Box>
+          <Box className={style.logo}>
+            <Image
+              src={"./JK_Tech_Logo.svg"}
+              alt="Logo"
+              width={400}
+              height={80}
+            />
+          </Box>
         </Box>
         <Box className={style.signup_r}>
           <Box>
@@ -83,7 +73,7 @@ export default function Login() {
                         }}
                         required
                       >
-                       First Name
+                        First Name
                       </FormLabel>
                       <TextField
                         fullWidth
@@ -95,7 +85,9 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.firstName}
                         onChange={handleChange}
-                        helperText={(touched.firstName && errors.firstName) || " "}
+                        helperText={
+                          (touched.firstName && errors.firstName) || " "
+                        }
                         error={Boolean(errors.firstName && touched.firstName)}
                       />
                     </Grid>
@@ -119,7 +111,9 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.lastName}
                         onChange={handleChange}
-                        helperText={(touched.lastName && errors.lastName) || " "}
+                        helperText={
+                          (touched.lastName && errors.lastName) || " "
+                        }
                         error={Boolean(errors.lastName && touched.lastName)}
                       />
                     </Grid>
@@ -167,8 +161,12 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.phoneNumber}
                         onChange={handleChange}
-                        helperText={(touched.phoneNumber && errors.phoneNumber) || " "}
-                        error={Boolean(errors.phoneNumber && touched.phoneNumber)}
+                        helperText={
+                          (touched.phoneNumber && errors.phoneNumber) || " "
+                        }
+                        error={Boolean(
+                          errors.phoneNumber && touched.phoneNumber
+                        )}
                       />
                     </Grid>
                     <Grid size={{ xs: 12, md: 6 }}>
@@ -191,7 +189,9 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.password}
                         onChange={handleChange}
-                        helperText={(touched.password && errors.password) || " "}
+                        helperText={
+                          (touched.password && errors.password) || " "
+                        }
                         error={Boolean(errors.password && touched.password)}
                       />
                     </Grid>
@@ -215,7 +215,9 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.password}
                         onChange={handleChange}
-                        helperText={(touched.password && errors.password) || " "}
+                        helperText={
+                          (touched.password && errors.password) || " "
+                        }
                         error={Boolean(errors.password && touched.password)}
                       />
                     </Grid>
@@ -317,18 +319,26 @@ export default function Login() {
                     </Grid>
                   </Grid>
 
-                  <Stack direction={'row'} alignItems={'center'} columnGap={2} mt={3}>
-                   <Tooltip title={'Sign Up Api is not exist its only UI'} placement="top-start">
-                   <Button
-                      variant="contained"
-                      type="submit"
-                      color="secondary"
-                      className={style.bt}
-                    //   disabled={true}
+                  <Stack
+                    direction={"row"}
+                    alignItems={"center"}
+                    columnGap={2}
+                    mt={3}
+                  >
+                    <Tooltip
+                      title={"Sign Up Api is not exist its only UI"}
+                      placement="top-start"
                     >
-                      Sign Up
-                    </Button>
-                   </Tooltip>
+                      <Button
+                        variant="contained"
+                        type="submit"
+                        color="secondary"
+                        className={style.bt}
+                        //   disabled={true}
+                      >
+                        Sign Up
+                      </Button>
+                    </Tooltip>
 
                     <Typography variant="body1" mt={1} color="text.tabColor">
                       {"Already have an account? "}
