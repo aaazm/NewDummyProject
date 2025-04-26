@@ -14,7 +14,7 @@
     justify-content: space-between;
     .login_form_l{
         width: 65%;
-        background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(https://metapplydevdocs.blob.core.windows.net/media/loginBanner.webp);
+        background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../../public/loginBanner.webp);
         background-size: cover;
        @include flex-center;
         justify-content: center;
@@ -48,7 +48,7 @@
     .signup_l{
         text-align: center;
         flex: 0 0 30%;
-        background-image: url(/signup.svg);
+        background-image: url(../../public/signup.svg);
         background-size: cover;
         background-position: 50%;
         position: fixed;
@@ -110,8 +110,10 @@
     background: rgb(241, 244, 255) !important;
     a{
         text-decoration: none;
+        color: $primary-color;
         p{
             font-size: 10px;
+            color: $primary-color;
         }
     }
 }

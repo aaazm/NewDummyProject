@@ -110,7 +110,7 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.email}
                         onChange={handleChange}
-                        helperText={(touched.email && errors.email) || " "}
+                        // helperText={(touched.email && errors.email) || " "}
                         error={Boolean(errors.email && touched.email)}
                       />
                     </Grid>
@@ -134,9 +134,9 @@ export default function Login() {
                         onBlur={handleBlur}
                         value={values.password}
                         onChange={handleChange}
-                        helperText={
-                          (touched.password && errors.password) || " "
-                        }
+                        // helperText={
+                        //   (touched.password && errors.password) || " "
+                        // }
                         error={Boolean(errors.password && touched.password)}
                       />
                     </Grid>
