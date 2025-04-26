@@ -21,6 +21,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
   return (
     <Html lang="en">
       <Head>
+        <title>JKTech</title>
       <meta name="emotion-insertion-point" content="" />
       {emotionStyleTags}
       </Head>

@@ -13,6 +13,7 @@ import { Formik } from "formik";
 import Link from "next/link";
 import Image from "next/image";
 import { postApi } from "@/utils/api";
+import { useRouter } from "next/navigation";
 
 interface FormValues {
   email: string;
@@ -25,7 +26,7 @@ const initialValues: FormValues = {
 };
 export default function Login() {
   const [isPending, IsPending] = useState(false);
-
+  const router = useRouter();
   const onFormSubmit = async (values: FormValues) => {
     const payload = {
       username: "mor_2314",
@@ -41,7 +42,8 @@ export default function Login() {
 
       if (data.token) {
         localStorage.setItem("login-user", data.token);
-        window.location.href = "/dashboard"; // Redirect
+        router.push('/dashboard')
+        // window.location.href = "/dashboard"; // Redirect
         IsPending(false);
       } else {
         alert("Login failed: Invalid credentials");
@@ -149,10 +151,10 @@ export default function Login() {
                       <Button disabled={true} variant="contained">
                         {" "}
                         {isPending ? (
-                           <>
-                             Sign In
+                          <>
+                            Sign In
                             <CircularProgress size={30} color="inherit" />
-                           </>
+                          </>
                         ) : (
                           ""
                         )}
