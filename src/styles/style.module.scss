@@ -1,0 +1,150 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+  }
+  @mixin btn{
+    background: $primary-color;
+    width: 100px;
+  }
+  $primary-color: #0d0d69;
+  $border-color: rgb(229, 229, 229);
+
+.p_login_form{
+    display: flex;
+    justify-content: space-between;
+    .login_form_l{
+        width: 65%;
+        background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(https://metapplydevdocs.blob.core.windows.net/media/loginBanner.webp);
+        background-size: cover;
+       @include flex-center;
+        justify-content: center;
+        padding: 40px;
+        
+    }
+    .login_form_r{
+        width: 35%;
+        height: 100vh;
+        @include flex-center;
+        box-shadow: 0 0 10px #737373;
+        overflow: auto;
+        padding: 20px 60px;
+        .log_txt{
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .logo{
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    }
+    .bt{
+        background: $primary-color;
+    }
+}
+
+// signUp
+
+.p_signup{
+    .signup_l{
+        text-align: center;
+        flex: 0 0 30%;
+        background-image: url(/signup.svg);
+        background-size: cover;
+        background-position: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 100%;
+        z-index: -1;
+        padding-top: 28px;
+    }
+    .signup_r{
+        margin-left: 30%;
+        flex: 1 1;
+        overflow-y: auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        .signup_txt{
+            font-size: 30px;
+            font-weight: 700;
+            margin: 40px 20px 28px 0px;
+        }
+    }
+    .bt{
+        @include btn
+    }
+}
+.logout_nav{
+    border-bottom: 1px solid $border-color;
+    padding: 15px 18px;
+    .bt{
+        @include btn
+    }
+}
+
+// side bar
+
+.side_bar{
+    height: 100vh;
+    border-right: 1px solid $border-color;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+}
+.main_box{
+    padding: 25px;
+    background: rgb(229 229 229 / 22%);
+    width: 100%;
+}
+.active_nav{
+    min-width: 60px;
+    color: rgb(47, 50, 147);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 8px;
+    outline: 0px;
+    padding: 8px 0;
+    border-width: 1px;
+    border: 1px solid rgb(224, 224, 224);
+    border-image: initial;
+    border-radius: 5px;
+    background: rgb(241, 244, 255) !important;
+    a{
+        text-decoration: none;
+        p{
+            font-size: 10px;
+        }
+    }
+}
+
+// dashboard
+.dash_style{
+    background: #fff;
+    border: 1px solid $border-color;
+    .bt{
+        background: $primary-color;
+    }
+}
+
+.user_form{
+    padding: 20px;
+    .log_txt{
+        margin-bottom: 30px;
+    }
+    .bt{
+        background: $primary-color;
+    }
+}
+@media screen and (max-width: 768px) {
+    .login_form_l {
+      display: none !important;
+    }
+    .login_form_r {
+      width: 100% !important;
+    }
+    .signup_l{
+        display: none;
+    }
+    .signup_r{
+        margin-left: 0 !important;
+    }
+  }
