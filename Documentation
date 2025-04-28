@@ -1,0 +1,65 @@
+This project is a React.js application built using the Next.js framework, styled with Material UI and SASS. It uses Material-React-Table for dynamic data tables, Formik for form management, and Axios for API communication.
+
+Using Library and framework
+
+-ReactJS
+-Frontend UI library
+-Next.js
+-Server-side rendering, Routing
+-Material-UI (MUI)
+-UI Components
+-SASS
+-Styling with SCSS
+-Formik
+-Form state management
+-Axios
+-API Requests
+-Material-React-Table
+-Advanced table components
+
+Project Styructure
+
+components/      Reusable React Components
+pages/               Next.js Pages (Routes)
+styles/              SCSS Files
+utils/               Utility Functions (e.g., API clients)
+services/         API Service Functions
+public/             Static Assets
+formik-schemas/    Formik Validation Schemas
+next.config.js       Next.js Configuration
+
+
+ReactJS
+➔ Frontend UI library
+Why we use it:
+React offers a component-based architecture, virtual DOM for fast rendering, and a large ecosystem. It makes building interactive UIs simpler, faster, and more maintainable.
+
+Next.js
+➔ Server-side rendering, Routing
+Why we use it:
+Next.js enhances React by adding server-side rendering (SSR), static site generation (SSG), built-in routing, and API routes, leading to better SEO performance and faster page loads.
+
+Material-UI (MUI)
+➔ UI Components
+Why we use it:
+MUI provides a set of prebuilt, fully customizable, and accessible components following Material Design guidelines. It speeds up UI development and ensures design consistency across the app.
+
+SASS
+➔ Styling with SCSS
+Why we use it:
+SASS is a CSS preprocessor that adds features like variables, nesting, mixins, and functions, making CSS more powerful, organized, and reusable.
+
+Formik
+➔ Form state management
+Why we use it:
+Managing forms manually in React can become messy. Formik simplifies handling form state, validation, error handling, and form submission, reducing boilerplate code significantly.
+
+Axios
+➔ API Requests
+Why we use it:
+Axios is a promise-based HTTP client that's simpler and cleaner than the Fetch API. It supports request/response interception, automatic JSON transformations, and better error handling.
+
+Material-React-Table
+➔ Advanced table components
+Why we use it:
+Material-React-Table provides powerful, flexible, and customizable data tables built on top of Material-UI, with features like sorting, filtering, pagination, and row editing out of the box.
