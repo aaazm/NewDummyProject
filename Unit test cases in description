@@ -1,0 +1,46 @@
+ Login unit test cases -)
+
+1) Test Rendering of Form Elements:
+-Verify that the login form includes the expected form elements like username input, password input, and login button.
+
+2) Test Correct Credentials Handling:
+
+-Simulate user input for correct credentials (e.g., "Test" and "password123").
+-Verify that the login function is called with a success response (e.g., onLogin(true)).
+-Test Incorrect Credentials Handling:
+-Simulate user input for incorrect credentials (e.g., "wronguser" and "wrongpassword").
+-Verify that the login function is called with a failure response (e.g., onLogin(false)).
+
+3) Test Button Disabled State (if applicable):
+- If  api in the pending state.
+
+4) Test Successful Login Response:
+-After correct login, check that the appropriate next action or page transition occurs (e.g., redirecting to a dashboard).
+
+User List unit test cases -)
+
+1) Test Redirection After Login
+-Simulate a login with valid credentials.
+-Ensure the window.location or  router is correctly updated to the dashboard route.
+
+2) Test API Call for Fetching User List
+-Mock an API call (e.g., fetchUsers()).
+-Verify that the API is called when the component mounts or after the user is redirected to the dashboard.
+
+3) Test User List Population
+-Mock the API response with a list of users.
+-Verify that the table rows are populated with the mock data.
+
+4) Test Table Rendering with Empty Data
+-Mock an empty response from the API.
+-Ensure the table renders correctly with a “No users found” message.
+
+Logout unit test cases
+
+1) Test Logout Button Visibility
+-Ensure that the logout button is displayed after a successful login.
+-Verify that it is hidden or not accessible when the user is not logged in.
+
+2) Logout Button Functionality.
+-user clicking the logout button.
+-Ensure that the user is redirected to the login page
